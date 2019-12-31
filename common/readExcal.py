@@ -1,83 +1,50 @@
 # -*- coding: utf-8 -*-
 '''
-@Time    : 2019-12-29 10:47
+@Time    : 2019-12-29 14:27
 @Author  : zhoujialin
 @File    : readExcal.py
 '''
-
-# 导入读取excal包
-# 打开目标文件
-# 定位sheet页
-# 定位行和列
-# 读取数据
-# 组装数据
-# return 数据
-
 import xlrd
 
-readbook = xlrd.open_workbook(r"../testData/data.xls")
+class readExcel(object):
 
-print(readbook)
-# url_sheet = readbook.sheet_by_name('sheet1')页
-# 定位sheet
-urlsheet = readbook.sheet_by_index(0)
-paramsheet  = readbook.sheet_by_name('paramSheet')
-assertsheet = readbook.sheet_by_index(2)
+    def __init__(self):
+        readbook = xlrd.open_workbook(r"../testData/data_demo.xls")
+        self.urlSheet = readbook.sheet_by_index(0)
+        self.paramSheet = readbook.sheet_by_name('paramSheet')
+        self.assertSheet = readbook.sheet_by_index(2)
 
-# 4定位行和列
+    def getSheetData(self,sheetName):
+        # 获取行数
+        sheetLineNum = sheetName.nrows
+        data = []
+        for i in range(1, sheetLineNum):
+            # 获取这一行的所有页
+            url_data = sheetName.row_values(i)
+            if sheetName == self.urlSheet:
+                url_data[1] = url_data[1] + url_data[2]
+                url_data.pop(2)
+            data.append(url_data)
+        print(data)
+        return data
 
-def getSheetData(sheetName):
-    # 获取行数
-    sheetLineNum = sheetName.nrows
-    data = []
-    for i in range(1, sheetLineNum):
-        # 获取这一行的所有页
-        url_data = sheetName.row_values(i)
-        data.append(url_data)
-    return data
-
-urlsheetData = getSheetData(urlsheet)
-print(urlsheetData)
-paramsheetData = getSheetData(paramsheet)
-assertsheetData = getSheetData(assertsheet)
-
-# print(urlsheetData)
-# print(paramsheetData)
-# print(assertsheetData)
-
-# tmp = list(zip(urlsheetData,paramsheetData))
-# print(tmp)
-# data = list(zip(urlsheetData, paramsheetData))
-
-def getDate(*args):
-    r_list = []
-    num = len(args)
-    for arg in args:
-        temp = []
-        for i in range(num):
-            temp.append(arg[i])
-        r_list.append(temp)
-    return r_list
-
-data = getDate(urlsheetData, paramsheetData, assertsheetData)
-print(data)
+    def assembleData(self):
+        urlList = self.getSheetData(self.urlSheet)
+        paramList = self.getSheetData(self.paramSheet)
+        assertList = self.getSheetData(self.assertSheet)
+        data = []
 
 
+        for i in range(len(urlList)):
+            new_url = urlList[i]
+            new_param = paramList[i][1:]
+            new_assert = assertList[i][1:]
+            new_url.extend(new_param)
+            new_url.extend(new_assert)
+            data.append(new_url)
+        return data
 
-
-list1 = [1,2,3]
-list2 = [4,5,6]
-list3 = [7,8,9]
-
-
-# r_list = []
-# for i in range(3):
-#     list4 = []
-#     list4.append(list1[i])
-#     list4.append(list2[i])
-#     list4.append(list3[i])
-#     r_list.append(list4)
-# print(r_list)
-
-data = getDate(urlsheetData, paramsheetData, assertsheetData)
-print(data)
+if __name__ == '__main__':
+    re = readExcel()
+    # print(re.assembleData())
+    all_data = re.assembleData()
