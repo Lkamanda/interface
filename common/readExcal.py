@@ -5,13 +5,16 @@
 @File    : readExcal.py
 '''
 import xlrd
+import os
 
 class readExcel(object):
 
     def __init__(self):
         "/Users/zhoujialin/PycharmProjects/interface/testData/data_demo.xls"
         # readbook = xlrd.open_workbook(r"/testData/data_demo.xls")
-        readbook = xlrd.open_workbook(r"./testData/data_demo.xls")
+        path = os.path.dirname(os.path.dirname(__file__))
+        print(path)
+        readbook = xlrd.open_workbook(r"%s/testData/data_demo.xls" % path)
 
         self.urlSheet = readbook.sheet_by_index(0)
         self.paramSheet = readbook.sheet_by_name('paramSheet')
@@ -49,3 +52,4 @@ if __name__ == '__main__':
     re = readExcel()
     # print(re.assembleData())
     all_data = re.assembleData()
+    print(all_data)

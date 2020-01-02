@@ -34,6 +34,8 @@ class configHttp(object):
         return 0
 
 
+
+
 if __name__ == '__main__':
     test = configHttp()
     test.post(url="http://im.jingcailvtu.org:6963/u/login", data={'phone':"18612463553", 'password':111111, 'source':'2'})
