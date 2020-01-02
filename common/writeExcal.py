@@ -11,7 +11,7 @@ import time
 class writeExcal(object):
 
     def __init__(self, status):
-        self.path = r'../testData/data_demo.xls'
+        self.path = r'./testData/data_demo.xls'
         self.status = status
         self.length = len(status)
 

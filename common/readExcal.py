@@ -9,7 +9,10 @@ import xlrd
 class readExcel(object):
 
     def __init__(self):
-        readbook = xlrd.open_workbook(r"../testData/data_demo.xls")
+        "/Users/zhoujialin/PycharmProjects/interface/testData/data_demo.xls"
+        # readbook = xlrd.open_workbook(r"/testData/data_demo.xls")
+        readbook = xlrd.open_workbook(r"./testData/data_demo.xls")
+
         self.urlSheet = readbook.sheet_by_index(0)
         self.paramSheet = readbook.sheet_by_name('paramSheet')
         self.assertSheet = readbook.sheet_by_index(2)
@@ -25,7 +28,6 @@ class readExcel(object):
                 url_data[1] = url_data[1] + url_data[2]
                 url_data.pop(2)
             data.append(url_data)
-        print(data)
         return data
 
     def assembleData(self):
@@ -33,7 +35,6 @@ class readExcel(object):
         paramList = self.getSheetData(self.paramSheet)
         assertList = self.getSheetData(self.assertSheet)
         data = []
-
 
         for i in range(len(urlList)):
             new_url = urlList[i]
