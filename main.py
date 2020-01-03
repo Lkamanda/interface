@@ -10,7 +10,7 @@ import os
 import time
 gPath = os.path.dirname(__file__)
 class Runner(object):
-    
+
     def getSuite(self):
         # start_dir = 'C:/Users/zhoujialin/PycharmProjects/interface'+
         start_dir = gPath + '/testCase'

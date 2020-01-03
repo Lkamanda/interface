@@ -6,8 +6,13 @@ from common.configHttp import configHttp
 
 class ChatTest(unittest.TestCase):
 
-    def test1(self):
+    def getData(self):
         print('test2')
+
+
+if __name__ == '__main__':
+    mycase = ChatTest()
+    mycase.getData()
 
 
 
