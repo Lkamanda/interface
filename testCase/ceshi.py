@@ -1,7 +1,12 @@
 import unittest
+from ddt import ddt,data, unpack
 from common.sendRequest import readWrite
 readwrite = readWrite()
 
+
+
+
+@ddt
 class ChatTest(unittest.TestCase):
     @classmethod
     # def setUpClass(cls):
@@ -19,6 +24,8 @@ class ChatTest(unittest.TestCase):
     #     # cls.assert_real = cls.dataList[cls.id-1][6]
     #     # cls.result = cls.dataList[cls.id-1][7]
     #     cls.configH = configHttp()
+
+
 
     def setUp(self):
         pass
@@ -38,6 +45,10 @@ class ChatTest(unittest.TestCase):
     # def test3(self):
     #     # id = 2
     #     # print(get_data(dataList, id))
+    #
+
+
+
 
 
 

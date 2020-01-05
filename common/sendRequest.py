@@ -18,7 +18,7 @@ class readWrite(object):
         return eval(self.dataList[id - 1][4])
 
     def send_request(self, id):
-        if self.get_httpMethod(id) == 'post':
+        if self.get_httpMethod(id) == 'post' or self.get_httpMethod(id) == 'POST':
             res = self.configH.post(
                 url=self.get_url( id),
                 data=self.get_data(id)

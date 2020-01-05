@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-@Time    : 2019-12-29 14:27
+@Time    : 2020-01-04 17:42
 @Author  : zhoujialin
 @File    : readExcal.py
 '''
@@ -20,7 +20,7 @@ class readExcel(object):
         self.paramSheet = readbook.sheet_by_name('paramSheet')
         self.assertSheet = readbook.sheet_by_index(2)
 
-    def getSheetData(self,sheetName):
+    def getSheetData(self, sheetName):
         # 获取行数
         sheetLineNum = sheetName.nrows
         data = []
