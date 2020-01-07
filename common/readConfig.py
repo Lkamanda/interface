@@ -8,12 +8,13 @@
 导包
 创建对象
 """
-
 import configparser
 
 
 configPath = r'../config.ini'
-class readConfig():
+
+
+class readConfig(object):
 
     def __init__(self):
         self.cf = configparser.ConfigParser()
@@ -22,6 +23,7 @@ class readConfig():
     def getConfig_email(self, name):
         name = self.cf.get('email', name)
         return name
+
 
 if __name__ == '__main__':
     readC = readConfig()
