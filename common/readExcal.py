@@ -14,7 +14,7 @@ class readExcel(object):
         # readbook = xlrd.open_workbook(r"/testData/data_demo.xls")
         path = os.path.dirname(os.path.dirname(__file__))
         print(path)
-        readbook = xlrd.open_workbook(r"%s/testData/data_demo.xls" % path)
+        readbook = xlrd.open_workbook(r"%s/testData/data_demo/data_demo.xls" % path)
 
         self.urlSheet = readbook.sheet_by_index(0)
         self.paramSheet = readbook.sheet_by_name('paramSheet')

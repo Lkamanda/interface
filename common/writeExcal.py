@@ -8,6 +8,7 @@ import xlrd
 from xlutils.copy import copy
 import time
 
+openExcalPath = r'./testData/data_demo/data_demo.xls'
 writeExcalPath = r'./testData/data_demo.xls'
 class writeExcal(object):
 
@@ -16,7 +17,7 @@ class writeExcal(object):
         self.length = len(status)
 
     def write(self):
-        rb = xlrd.open_workbook(writeExcalPath)
+        rb = xlrd.open_workbook(openExcalPath)
         wb = copy(rb)
         ws = wb.get_sheet(2)
         for i in range(self.length):
