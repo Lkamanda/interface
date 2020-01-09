@@ -18,8 +18,9 @@ import unittest
 import os
 import time
 from common.clearTestReportFile import clearTestReportFile
-
+from common.sendEmail import *
 gPath = os.path.dirname(__file__)
+
 testCase_path = 'testReport'
 testData_path = 'testData'
 remove_dirXls = os.path.join(gPath, testData_path)
@@ -61,10 +62,13 @@ class Runner(object):
 if __name__ == '__main__':
     r = Runner()
     r.run()
+    # 发送测试报告
+    send_mail_html(email_dir=remove_dirHtml)
     # 清楚沉余的测试报告
     clearTestReportFile(removeType='html', remove_dir=remove_dirHtml)
     # 清楚沉余的xls
     clearTestReportFile(removeType='xls', remove_dir=remove_dirXls)
+
 # 发送邮件
 # 定期清理报告文件
 # 缺少logging模块

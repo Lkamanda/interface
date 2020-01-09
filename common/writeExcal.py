@@ -10,6 +10,8 @@ import time
 
 openExcalPath = r'./testData/data_demo/data_demo.xls'
 writeExcalPath = r'./testData/data_demo.xls'
+
+
 class writeExcal(object):
 
     def __init__(self, status):

@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-01-09 00:06:53</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.337749</p>
-<p class='attribute'><strong>Status:</strong> Pass 3 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-01-09 17:46:21</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.446025</p>
+<p class='attribute'><strong>Status:</strong> Pass 3</p>
 
 <p class='description'>version-2</p>
 </div>
@@ -302,61 +302,12 @@ pt1.3:
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>unittest.suite._ErrorHolder</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>ChatTest)</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
-
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.1: Traceback (most recent call last):
-  File "/Users/zhoujialin/PycharmProjects/interface/testCase/test2.py", line 18, in tearDownClass
-    writeE.write()
-  File "/Users/zhoujialin/PycharmProjects/interface/common/writeExcal.py", line 19, in write
-    rb = xlrd.open_workbook(writeExcalPath)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/xlrd/__init__.py", line 111, in open_workbook
-    with open(filename, "rb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: './testData/data_demo.xls'
-Traceback (most recent call last):
-  File "/Users/zhoujialin/PycharmProjects/interface/testCase/test2.py", line 18, in tearDownClass
-    writeE.write()
-  File "/Users/zhoujialin/PycharmProjects/interface/common/writeExcal.py", line 19, in write
-    rb = xlrd.open_workbook(writeExcalPath)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/xlrd/__init__.py", line 111, in open_workbook
-    with open(filename, "rb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: './testData/data_demo.xls'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
 <tr id='total_row'>
     <td>Total</td>
-    <td>4</td>
+    <td>3</td>
     <td>3</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

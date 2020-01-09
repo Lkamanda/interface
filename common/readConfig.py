@@ -9,16 +9,23 @@
 创建对象
 """
 import configparser
+import os
 
 
-configPath = r'../config.ini'
+# configP = 'config.txt'
+# # configPath = r'C:\Users\zhoujialin\PycharmProjects\interface\config.txt'
+# # 怎么解决不使用绝对路径的问题
+# configPath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), configP)
+# print(configPath)
 
 
 class readConfig(object):
 
     def __init__(self):
+        self.configP = 'config.txt'
+        self.configPath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), self.configP)
         self.cf = configparser.ConfigParser()
-        self.cf.read(configPath, encoding='utf-8-sig')
+        self.cf.read(self.configPath, encoding='utf-8-sig')
 
     def getConfig_email(self, name):
         name = self.cf.get('email', name)
