@@ -10,10 +10,9 @@
 2.运行测试用列
 3.生成报告
 4.发送邮件携带附件
-
 """
 
-from testReport.HTMLTestRunner import HTMLTestRunner
+from testReport.HTMLTestRunner_PY3 import HTMLTestRunner
 import unittest
 import os
 import time
