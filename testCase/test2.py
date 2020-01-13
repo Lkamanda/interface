@@ -12,8 +12,6 @@ configH = configHttp()
 resultList=[]
 
 
-
-
 @ddt
 class ChatTest(unittest.TestCase):
     @classmethod
