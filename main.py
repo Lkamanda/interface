@@ -62,11 +62,11 @@ if __name__ == '__main__':
     r = Runner()
     r.run()
     # 发送测试报告
-    send_mail_html(email_dir=remove_dirHtml)
-    # 清楚沉余的测试报告
-    clearTestReportFile(removeType='html', remove_dir=remove_dirHtml)
-    # 清楚沉余的xls
-    clearTestReportFile(removeType='xls', remove_dir=remove_dirXls)
+    # send_mail_html(email_dir=remove_dirHtml)
+    # # 清楚沉余的测试报告
+    # clearTestReportFile(removeType='html', remove_dir=remove_dirHtml)
+    # # 清楚沉余的xls
+    # clearTestReportFile(removeType='xls', remove_dir=remove_dirXls)
 
 # 发送邮件
 # 定期清理报告文件

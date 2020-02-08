@@ -4,7 +4,7 @@ import logging, os, time
 class Logger(object):
 
     def __init__(self, logger):
-        self.logger = logging.getLogger()
+        self.logger = logging.getLogger(logger)
         self.logger.setLevel(logging.DEBUG)
 
         # 创建一个handler,用于控制台输出
